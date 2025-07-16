@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import IterationSample from './ch06/IterationSample-1';
+import IterationSample from '@/ch06/IterationSample';
 
 class App extends Component {
     render() {
