@@ -21,7 +21,7 @@ const Average = () => {
         setNumber('');
     }
 
-    const avg = useMemo(getAverage(list),[list]);
+    const avg = useMemo(() => getAverage(list),[list]);
 
     return (
         <div>
