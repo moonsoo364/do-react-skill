@@ -30,4 +30,4 @@ TodoListItem.propTypes = {
   onToggle: PropTypes.func,
 };
 
-export default TodoListItem;
+export default React.memo(TodoListItem);
