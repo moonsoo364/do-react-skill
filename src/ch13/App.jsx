@@ -3,6 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import About from '@/ch13/About';
 import Home from '@/ch13/Home';
 import Profiles from '@/ch13/Profiles';
+import HistorySample from '@/ch13/HistorySample';
 
 const App = () => {
   return (
@@ -17,12 +18,24 @@ const App = () => {
         <li>
           <Link to="/profiles">velopert 프로필</Link>
         </li>
+        <li>
+          <Link to="/history">History 예제</Link>
+        </li>
       </ul>
-
+      <hr />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/profiles/*" element={<Profiles />} />
+        <Route path="/history" element={<HistorySample />} />
+        <Route
+          path="*"
+          element={
+            <div>
+              <h2>이 페이지는 존재하지 않습니다.</h2>
+            </div>
+          }
+        />
       </Routes>
     </>
   );

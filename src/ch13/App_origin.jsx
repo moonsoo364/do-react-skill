@@ -28,14 +28,6 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/profiles/*" element={<Profiles />} />
         <Route path="/history" element={<HistorySample />} />
-        <Route
-          path="*"
-          element={
-            <div>
-              <h2>이 페이지는 존재하지 않습니다.</h2>
-            </div>
-          }
-        />
       </Routes>
     </>
   );

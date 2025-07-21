@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-
+import WithRouterSample from '@/ch13/WithRouterSample';
 const data = {
   velopert: {
     name: '김민준',
@@ -25,6 +25,7 @@ const Profile = () => {
         {username}({profile.name})
       </h3>
       <p>{profile.description}</p>
+      <WithRouterSample />
     </div>
   );
 };
