@@ -34,7 +34,7 @@ const TodeInsert = ({ onInsert }) => {
 };
 
 TodeInsert.propTypes = {
-  onInsert: PropTypes.func.isRequired,
+  onInsert: PropTypes.func.isRequired
 };
 
 export default TodeInsert;

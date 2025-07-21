@@ -15,7 +15,7 @@ const App = () => {
           <Link to="/about">소개</Link>
         </li>
         <li>
-          <Link to="/profiles">프로필</Link>
+          <Link to="/profiles">velopert 프로필</Link>
         </li>
       </ul>
 
