@@ -25,6 +25,7 @@ export default defineConfig([
           printWidth: 80,
           bracketSpacing: true, //객체 리터럴 중괄호 양쪽에 공백 추가: { foo: bar }
           arrowParens: 'avoid', //화살표 함수의 매개변수가 1개일 땐 괄호 생략: x => x + 1
+          trailingComma: 'none',
         },
       ],
     },

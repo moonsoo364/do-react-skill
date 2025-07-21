@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { produce } from 'immer';
+import produce from 'immer';
 const App = () => {
   const nextId = useRef(1);
   const [form, setForm] = useState({ name: '', username: '' });
@@ -45,7 +45,7 @@ const App = () => {
     id => {
       setData(
         produce(draft => {
-          draft.array.splice(
+          draft.array.spice(
             draft.array.findIndex(info => info.id === id),
             1
           );

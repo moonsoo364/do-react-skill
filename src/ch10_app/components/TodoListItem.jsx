@@ -14,7 +14,10 @@ const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
   return (
     <div className="TodoListItem-virtualized" style={style}>
       <div className="TodoListItem">
-        <div className={cn('checkbox', { checked })} onClick={() => onToggle(id)}>
+        <div
+          className={cn('checkbox', { checked })}
+          onClick={() => onToggle(id)}
+        >
           {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
           <div className="text">{text}</div>
         </div>
