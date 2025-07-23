@@ -1,14 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NewsPage from './pages/NewsPage';
+import { Route, Routes } from 'react-router-dom';
+import NewsPage from '@/ch14/pages/NewsPage';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/:category?" element={<NewsPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/:category?" element={<NewsPage />} />
+    </Routes>
   );
 };
 
