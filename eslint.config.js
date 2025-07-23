@@ -9,10 +9,10 @@ export default defineConfig([
     files: ['**/*.{js,mjs,cjs,jsx}'],
     plugins: {
       js,
-      prettier: pluginPrettier,
+      prettier: pluginPrettier
     },
     languageOptions: {
-      globals: globals.browser,
+      globals: globals.browser
     },
     rules: {
       'prettier/prettier': [
@@ -25,11 +25,11 @@ export default defineConfig([
           printWidth: 80,
           bracketSpacing: true, //객체 리터럴 중괄호 양쪽에 공백 추가: { foo: bar }
           arrowParens: 'avoid', //화살표 함수의 매개변수가 1개일 땐 괄호 생략: x => x + 1
-          trailingComma: 'none',
-        },
-      ],
+          trailingComma: 'none'
+        }
+      ]
     },
-    extends: ['js/recommended'],
+    extends: ['js/recommended']
   },
-  pluginReact.configs.flat.recommended,
+  pluginReact.configs.flat.recommended
 ]);
