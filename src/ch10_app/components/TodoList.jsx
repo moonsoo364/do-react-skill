@@ -30,7 +30,7 @@ const TodoList = ({ todos = [], onRemove, onToggle }) => {
       rowHeight={57}// 항목 높이
       rowRenderer={rowRederer}// 항목을 렌더링할 때 쓰는 함수
       list={todos}// 배열
-      style={{outline: 'none'}}// 리스트 기본 스타일 제거
+      style={{ outline: 'none' }} // 리스트 기본 스타일 제거
     />
   );
 };

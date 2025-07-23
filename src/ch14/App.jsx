@@ -1,8 +1,15 @@
 import React from 'react';
-import NewList from '@/ch14/NewsList';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NewsPage from './pages/NewsPage';
 
 const App = () => {
-  return <NewList />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/:category?" element={<NewsPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;

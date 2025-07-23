@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const NewsItemBlock = styled.div`
@@ -37,9 +38,9 @@ const NewsItem = ({ article }) => {
   return (
     <NewsItemBlock>
       {urlToImage && (
-        <div className="thumnail">
+        <div className="thumbnail">
           <a href={url} target="_blank" rel="noopener noreferrer">
-            <img src={urlToImage} alt="thumnail" />
+            <img src={urlToImage} alt="thumbnail" />
           </a>
         </div>
       )}
@@ -53,6 +54,10 @@ const NewsItem = ({ article }) => {
       </div>
     </NewsItemBlock>
   );
+};
+
+NewsItem.propTypes = {
+  article: PropTypes.object
 };
 
 export default NewsItem;
