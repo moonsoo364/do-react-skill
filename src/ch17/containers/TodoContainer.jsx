@@ -1,47 +1,30 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Todos from '@/ch17/components/Todos';
 import { changeInput, insert, toggle, remove } from '@/ch17/modules/todos';
-import PropTypes from 'prop-types';
+import { useSelector, shallowEqual } from 'react-redux';
+import useActions from '@/ch17/lib/useActions';
+const TodoContainer = () => {
+  const { input, todos } = useSelector(
+    ({ todos }) => ({
+      input: todos.input,
+      todos: todos.todos
+    }),
+    shallowEqual
+  );
+  const [onChangeInput, onInsert, onToggle, onRemove] = useActions(
+    [changeInput, insert, toggle, remove],
+    []
+  );
 
-const TodosContainer = ({
-  input,
-  todos,
-  changeInput,
-  insert,
-  toggle,
-  remove
-}) => {
   return (
     <Todos
       input={input}
       todos={todos}
-      onChangeInput={changeInput}
-      onInsert={insert}
-      onToggle={toggle}
-      onRemove={remove}
+      onChangeInput={onChangeInput}
+      onInsert={onInsert}
+      onToggle={onToggle}
+      onRemove={onRemove}
     />
   );
 };
-
-TodosContainer.propTypes = {
-  input: PropTypes.string.isRequired,
-  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
-  changeInput: PropTypes.func.isRequired,
-  insert: PropTypes.func.isRequired,
-  toggle: PropTypes.func.isRequired,
-  remove: PropTypes.func.isRequired
-};
-
-export default connect(
-  ({ todos }) => ({
-    input: todos.input,
-    todos: todos.todos
-  }),
-  {
-    changeInput,
-    insert,
-    toggle,
-    remove
-  }
-)(TodosContainer);
+export default TodoContainer;

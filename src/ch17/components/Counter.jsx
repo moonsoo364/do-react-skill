@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 const Counter = ({ number, onIncrease, onDecrease }) => {
+  console.log('Counter 렌더링');
   return (
     <div>
       <h1>{number}</h1>

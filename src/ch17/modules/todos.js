@@ -6,7 +6,7 @@ const INSERT = 'todos/INSERT';
 const TOGGLE = 'todos/TOGGLE';
 const REMOVE = 'todos/REMOVE';
 
-export const changeInput = createAction(CHANGE_INPUT, input => input );
+export const changeInput = createAction(CHANGE_INPUT, input => input);
 
 let id = 3;
 export const insert = createAction(INSERT, text => ({
@@ -43,12 +43,12 @@ const todos = handleActions(
       produce(state, draft => {
         draft.todos.push(todo);
       }),
-    [TOGGLE]: (state, { payload: id}) =>
+    [TOGGLE]: (state, { payload: id }) =>
       produce(state, draft => {
         const todo = draft.todos.find(todo => todo.id === id);
-        todo.done = ! todo.done;
+        todo.done = !todo.done;
       }),
-    [REMOVE]: (state, { payload: id}) =>
+    [REMOVE]: (state, { payload: id }) =>
       produce(state, draft => {
         const index = draft.todos.findIndex(todo => todo.id === id);
         draft.todos.splice(index, 1);
