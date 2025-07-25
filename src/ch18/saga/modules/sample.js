@@ -1,7 +1,6 @@
 import * as api from '@/ch18/thunk/lib/api';
 import { createAction, handleActions } from 'redux-actions';
-import { call, put, takeLatest } from 'redux-saga/effects';
-import { startLoading, finishLoading } from './loading';
+import { takeLatest } from 'redux-saga/effects';
 import createRequestSaga from '../lib/createRequestSaga';
 
 const GET_POST = 'sample/GET_POST';

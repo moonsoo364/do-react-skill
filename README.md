@@ -9,9 +9,17 @@
 - ~~ch11 컴포넌트 성능 최적화~~  
 
 ## 250721 ~ 250725
-- ch12 immer  
-- ch13 react-router  
-- ch13 외부 api  
+- ~~ch12 immer~~  
+- ~~ch13 react-router~~  
+- ~~ch14 외부 api 연동~~
+- ~~ch15 Context API~~
+- ~~ch16 redux 이해하기~~
+- ~~ch17 redux로 상태 관리하기~~
+- ~~ch18 redux 미들웨어를 이용한 상태관리~~
+
+## 250726 ~ 250730
+- ch19 코드 스플리팅
+
 
 # 메모
 ## ch 17 redux
