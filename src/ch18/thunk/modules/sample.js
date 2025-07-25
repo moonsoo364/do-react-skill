@@ -1,6 +1,6 @@
-import * as api from '@/ch18/lib/api';
+import * as api from '@/ch18/thunk/lib/api';
 import { handleActions } from 'redux-actions';
-import createRequestThunk from '@/ch18/lib/createRequestThunk';
+import createRequestThunk from '@/ch18/thunk/lib/createRequestThunk';
 const GET_POST = 'sample/GET_POST';
 const GET_POST_SUCCESS = 'sample/GET_POST_SUCCESS';
 

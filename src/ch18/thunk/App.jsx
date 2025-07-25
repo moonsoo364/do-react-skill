@@ -1,10 +1,10 @@
 import React from 'react';
-import CounterContainer from '@/ch18/container/CounterContainer';
+import SampleContainer from '@/ch18/saga/container/SampleContainer';
 
 const App = () => {
   return (
     <div>
-      <CounterContainer />
+      <SampleContainer />
     </div>
   );
 };

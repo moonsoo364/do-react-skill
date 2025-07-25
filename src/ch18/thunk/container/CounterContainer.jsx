@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { increaseAsync, decreaseAsync } from '@/ch18/modules/counter';
-import Counter from '@/ch18/components/Counter';
+import { increaseAsync, decreaseAsync } from '@/ch18/thunk/modules/counter';
+import Counter from '@/ch18/thunk/components/Counter';
 import PropTypes from 'prop-types';
 
 const CounterContainer = ({ number, increaseAsync, decreaseAsync }) => {

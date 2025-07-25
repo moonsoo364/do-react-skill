@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPost, getUsers } from '@/ch18/modules/sample';
+import { getPost, getUsers } from '@/ch18/thunk/modules/sample';
 import Sample from '../components/sample';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
