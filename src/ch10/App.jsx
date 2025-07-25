@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
-import TodoTemplate from '@/ch10_app/components/TodoTemplate';
-import TodeInsert from '@/ch10_app/components/TodoInsert';
-import TodoList from '@/ch10_app/components/TodoList';
+import TodoTemplate from '@/ch10/components/TodoTemplate';
+import TodeInsert from '@/ch10/components/TodoInsert';
+import TodoList from '@/ch10/components/TodoList';
 const App = () => {
   const [todos, setTodos] = useState([
     {

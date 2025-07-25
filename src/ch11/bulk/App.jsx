@@ -1,7 +1,7 @@
 import React, { useCallback, useReducer, useRef } from 'react';
-import TodoTemplate from '@/ch10_app/components/TodoTemplate';
-import TodeInsert from '@/ch10_app/components/TodoInsert';
-import TodoList from '@/ch10_app/components/TodoList';
+import TodoTemplate from '@/ch10/components/TodoTemplate';
+import TodeInsert from '@/ch10/components/TodoInsert';
+import TodoList from '@/ch10/components/TodoList';
 function createBulkTodos() {
   const array = [];
   for (let i = 0; i <= 2500; i++) {

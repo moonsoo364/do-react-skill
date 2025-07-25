@@ -1,10 +1,10 @@
 import React from 'react';
-import SampleContainer from '@/ch18/container/SampleContainer';
+import CounterContainer from '@/ch18/container/CounterContainer';
 
 const App = () => {
   return (
     <div>
-      <SampleContainer />
+      <CounterContainer />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useCallback } from 'react';
-import TodoListItem from '@/ch10_app/components/TodoListItem';
+import TodoListItem from '@/ch10/components/TodoListItem';
 import '@/ch10_app/css/TodoList.scss';
 import { List } from 'react-virtualized';
 
