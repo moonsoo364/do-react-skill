@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@loadable/component": "^5.16.7",
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.10.0",
     "classnames": "^2.5.1",
