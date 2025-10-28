@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import IterationSample from '@/ch06/do/IterationSample';
+import Say from '@/ch03/3.4_state/Say';
 
 class App extends Component {
   render() {
-    return <IterationSample />;
+    return <Say />;
   }
 }
 
