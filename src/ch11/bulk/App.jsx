@@ -8,7 +8,7 @@ function createBulkTodos() {
     array.push({
       id: i,
       text: `할일 ${i}`,
-      checked: false,
+      checked: false
     });
   }
   return array;
@@ -21,7 +21,7 @@ function todoReducer(todos, action) {
       return todos.filter(todo => todo.id !== action.id);
     case 'TOGGLE':
       return todos.map(todo =>
-        todo.id === action.id ? { ...todo, checked: !todo.checked } : todo,
+        todo.id === action.id ? { ...todo, checked: !todo.checked } : todo
       );
     default:
       return todos;
@@ -35,7 +35,7 @@ const App = () => {
     const todo = {
       id: nextId.current,
       text,
-      checked: false,
+      checked: false
     };
     dispatch({ type: 'INSERT', todo });
     nextId.current += 1;

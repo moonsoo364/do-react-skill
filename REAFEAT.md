@@ -1,0 +1,62 @@
+
+
+# 251028 복습
+## state
+state는 리액트 내부에서 변경될 수 있는 값을 의미
+
+## 함수형 컴포넌트 useState
+리액트 16.8 이후부터 useState라는 함수를 이용하여 state를 사용할 수 있게 되었다.
+예제 : `src\ch03\3.4_state\Say.jsx`
+# 251029 복습
+
+## useState를 여러 번 사용하기
+하나의 useState 함수는 하나의 상태 값만 관리할 수 있다. 컴포넌트에서 관리해야 할 상태가 여러 개라면 useState를 여러번 사용해야 한다. 
+예제 : `src\ch08\refeat\251029\useState\info.jsx`
+
+## useEffect
+리액트 컴포넌트가 렌더링될 때마다 특정 작업을 수행하도록 설정할 수 있는 훅
+vue2의 `mouned`, `updated` 와 유사한 기능 제공
+`useEffect`의 두 번째 인수를 배열로 넣으면 마운트될때 만 첫 번째 인수의 함수가 호출된다.
+두 번째 인수에 state를 넣으면 해당 값이 변경될 때를 감지하여 첫 번째 인수의 함수가 호출된다.
+
+```js
+usEffect (() =>{},[])
+```
+
+아래 `useState`에서 `createBulkTodos`처럼 함수를 파라미터로 전달하면 처음 렌더링할 때 1번 호출
+`createBulkTodos()`를 파라미터로 전달하면 리렌더링할 때마다 호출
+
+```js
+function createBulkTodos() {
+  const array = [];
+  for (let i = 0; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `할일 ${i}`,
+      checked: false
+    });
+  }
+  return array;
+}
+  const [todos, setTodos] = useState(createBulkTodos);
+```
+
+## state의 값이 변경되었을 때 concat, filter, map, ...을 사용하여 deep copy를 하는 이유
+
+** 레퍼런스가 가르키는 위치가 같을 경우 리 렌더링이 일어나지 않기 때문 ** 
+
+### concat
+배열의 insert 동작에 사용
+
+### filter
+배열의 delete 동작에 사용
+
+### map
+배열 요소를 이용해 계산된 요소를 반환할 때 사용
+ex) TodoList 목록에서 완료된 목록을 토글할 때 id로 check 표시를 한다.
+
+## 이벤트 핸들러
+ 클릭한 후 이벤트를 동작하고 싶으면 화살표 함수를 이용해 콜백 함수를 `onClick`에 바인딩
+```js
+onClick={() => onToggle(id)}
+```

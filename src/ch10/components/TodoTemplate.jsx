@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import '@/ch10_app/css/TodoTemplate.scss';
+import '@/ch10/css/TodoTemplate.scss';
 
 const TodoTemplate = ({ children }) => {
   return (

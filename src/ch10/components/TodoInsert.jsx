@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useCallback, useState } from 'react';
 import { MdAdd } from 'react-icons/md';
-import '@/ch10_app/css/TodoInsert.scss';
+import '@/ch10/css/TodoInsert.scss';
 
 const TodeInsert = ({ onInsert }) => {
   const [value, setValue] = useState('');

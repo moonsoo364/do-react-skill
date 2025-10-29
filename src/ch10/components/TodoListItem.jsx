@@ -3,10 +3,10 @@ import React from 'react';
 import {
   MdCheckBoxOutlineBlank,
   MdCheckBox,
-  MdRemoveCircleOutline,
+  MdRemoveCircleOutline
 } from 'react-icons/md';
 import cn from 'classnames';
-import '@/ch10_app/css/TodoListItem.scss';
+import '@/ch10/css/TodoListItem.scss';
 
 const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
   const { id, text, checked } = todo;
@@ -32,7 +32,7 @@ const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
 TodoListItem.propTypes = {
   todo: PropTypes.object,
   onRemove: PropTypes.func,
-  onToggle: PropTypes.func,
+  onToggle: PropTypes.func
 };
 
 export default React.memo(
