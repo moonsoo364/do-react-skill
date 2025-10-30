@@ -3,27 +3,23 @@ import React, { useCallback, useState } from 'react';
 import { MdAdd } from 'react-icons/md';
 import '@/ch10/css/TodoInsert.scss';
 
-const TodeInsert = ({ onInsert }) => {
+const TodoInsert = ({ onInsert }) => {
   const [value, setValue] = useState('');
   const onChange = useCallback(e => {
     setValue(e.target.value);
   }, []);
-
-  const onSubmit = useCallback(
-    e => {
-      onInsert(value);
-      setValue('');
-      e.preventDefault();
-    },
-    [onInsert, value]
-  );
-
+  const onSumbit = useCallback(e => {
+    e.preventDefault();
+    console.log('# onSubmit');
+    onInsert(value);
+    setValue('');
+  }, []);
   return (
-    <form className="TodoInsert" onSubmit={onSubmit}>
+    <form className="TodoInsert" onSubmit={onSumbit}>
       <input
         value={value}
         onChange={onChange}
-        name="todo"
+        type="text"
         placeholder="할 일을 입력하세요"
       />
       <button type="submit">
@@ -32,9 +28,8 @@ const TodeInsert = ({ onInsert }) => {
     </form>
   );
 };
-
-TodeInsert.propTypes = {
+TodoInsert.propTypes = {
   onInsert: PropTypes.func.isRequired
 };
 
-export default TodeInsert;
+export default TodoInsert;

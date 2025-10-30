@@ -60,3 +60,11 @@ ex) TodoList 목록에서 완료된 목록을 토글할 때 id로 check 표시�
 ```js
 onClick={() => onToggle(id)}
 ```
+
+# 251030 복습
+
+## useRef
+렌더링에 사용되지 않는 값을 참조할 수 있는 리액트 훅
+
+사용 방법
+- input 태그에서 dom을 지정해서 이벤트 혹은 값을 받아올 때

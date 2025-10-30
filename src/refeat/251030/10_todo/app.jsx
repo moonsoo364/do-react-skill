@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import '@/refeat/251030/10_todo/css/index.css';
 import TodoTemplate from '@/refeat/251030/10_todo/components/TodoTemplate';
 import TodoInsert from '@/refeat/251030/10_todo/components/TodoInsert';
@@ -22,9 +22,21 @@ const App = () => {
       checked: false
     }
   ]);
+  const nextId = useRef(4);
+  const onInsert = useCallback(
+    text => {
+      const todo = {
+        id: nextId.current,
+        text,
+        checked: false
+      };
+      setTodos(todos.concat(todo));
+    },
+    []
+  );
   return (
     <TodoTemplate>
-      <TodoInsert />
+      <TodoInsert onInsert={onInsert} />
       <TodoList todos={todos} />
     </TodoTemplate>
   );
