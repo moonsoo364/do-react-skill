@@ -72,3 +72,40 @@ p278
 
 사용 방법
 - input 태그에서 dom을 지정해서 이벤트 혹은 값을 받아올 때
+
+# 251031 복습
+
+## useCallback
+
+리렌더링 시 함수 정의를 캐싱
+
+
+```js
+import { useCallback } from 'react';
+
+export default function ProductPage({ productId, referrer, theme }) {
+  const handleSubmit = useCallback((orderDetails) => {
+    post('/product/' + productId + '/buy', {
+      referrer,
+      orderDetails,
+    });
+  }, [productId, referrer]);
+```
+
+### 매개 변수
+`useCallback(fn, dependencies) `
+- `fn` : 캐싱할 함수객체
+- `dependecies`: `fn` 내에서 참조되는 반응형 값 목록 prop, state, 컴포넌트의 함수와 변수가 포함됨, linter 설정으로 의존성 검증 가능
+
+## 컴포넌트의 리렌더링이 발생하는 경우
+1. 자신이 전달받은 props가 변경될 때
+2. 자신의 state가 바뀔 때
+3. 부모 컴포넌트가 리렌더링될 때
+4. forceUpdate 함수가 실행될 때
+
+## 컴포넌트
+사용자 인터페이스(HTML)을 재사용하기 위한 API, 기능들이 포함되어 있다.
+
+### render()
+컴포넌트가 어떻게 생겼는 지 정의하는 역할을 한다.
+`render()` 는 뷰가 어떻게 생겼고 어떻게 작동하는 지에 대한 저옵를 지닌 객체를 반환한다.

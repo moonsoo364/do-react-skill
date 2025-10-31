@@ -32,7 +32,7 @@ const App = () => {
       };
       setTodos(todos.concat(todo));
     },
-    []
+    [todos]
   );
   return (
     <TodoTemplate>

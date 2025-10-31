@@ -8,12 +8,15 @@ const TodoInsert = ({ onInsert }) => {
   const onChange = useCallback(e => {
     setValue(e.target.value);
   }, []);
-  const onSumbit = useCallback(e => {
-    e.preventDefault();
-    console.log('# onSubmit');
-    onInsert(value);
-    setValue('');
-  }, []);
+  const onSumbit = useCallback(
+    e => {
+      e.preventDefault();
+      console.log('# onSubmit');
+      onInsert(value);
+      setValue('');
+    },
+    [value]
+  );
   return (
     <form className="TodoInsert" onSubmit={onSumbit}>
       <input
