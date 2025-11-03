@@ -23,9 +23,15 @@ const App = () => {
     }
   ]);
   const nextId = useRef(4);
+  const onRemove = useCallback(
+    id => {
+      console.log(id);
+      setTodos(todos.filter(todo => todo.id !== id));
+    },
+    [todos]
+  );
   const onInsert = useCallback(
     text => {
-      console.log(text);
       const todo = {
         id: nextId.current++,
         text,
@@ -35,10 +41,18 @@ const App = () => {
     },
     [todos]
   );
+  const onToggle = useCallback(id => {
+    console.log(id);
+    setTodos(
+      todos.map(todo =>
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
+      )
+    );
+  });
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
 };

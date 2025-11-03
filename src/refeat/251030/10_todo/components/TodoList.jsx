@@ -1,23 +1,27 @@
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import React from 'react';
 import TodoListItem from '@/refeat/251030/10_todo/components/TodoListItem';
 import '@/ch10/css/TodoList.scss';
 
-const TodoList = ({ todos }) => {
-  // useEffect(() => {
-  //   console.log(todos);
-  // }, []);
+const TodoList = ({ todos, onRemove, onToggle }) => {
   return (
     <div className="TodoList">
       {todos.map(todo => (
-        <TodoListItem todo={todo} key={todo.id} />
+        <TodoListItem
+          todo={todo}
+          key={todo.id}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );
 };
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.object).isRequired
+  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onRemove: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired
 };
 
 export default TodoList;
